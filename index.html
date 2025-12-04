@@ -3,23 +3,270 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>YN Company Profile</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Font for Icons -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- CSS External -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="bg-white text-gray-800 flex flex-col min-h-screen">
 
     <!-- Header -->
-     <header></header>
+     <header class="bg-white border-b-2 border-gray-200 sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo -->
+             <div class="flex items-center space-x-2">
+                <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center font-bold text-xl border-2 border-black">
+                    YN
+                </div>
+                <span class="hidden md:block font-bold text-lg">Company Profile</span>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-2">
+                <a href="#home" class="nav-link px-4 py-2 border border-transparent hover:border-gray-300">Home</a>
+                <a href="#profile" class="nav-link px-4 py-2 border border-transparent hover:border-gray-300">Our Profile</a>
+                <a href="#portfolio" class="nav-link px-4 py-2 border border-transparent hover:border-gray-300">Portfolio</a>
+                <a href="#message-us" class="nav-link px-4 py-2 border border-transparent hover:border-gray-300">Message Us</a>
+            </nav>
+
+        </div>
+        
+        <!-- Mobile Navigation Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-50 border-t border-gray-200 p-4 flex flex-col space-y-3">
+            <a href="#home" class="block py-2">Home</a>
+            <a href="#profile" class="block py-2">Our Profile</a>
+            <a href="#portfolio" class="block py-2">Portfolio</a>
+            <a href="#message-us" class="block py-2">Message Us</a>
+        </div>
+
+     </header>
 
     <!-- Main -->
-     <main></main>
+     <main>
+         <!-- HERO SECTION -->
+        <section id="home" class="container mx-auto px-4 py-8">
+        <div class="text-center md:text-left mb-6">
+            <h1 class="text-3xl font-bold mb-2">Hi <span id="user-name-display" class="text-blue-600">Visitor</span>, Welcome To Website</h1>
+            <p class="text-gray-600 italic">This is my first training website project</p>
+        </div>
+
+        <!-- Auto Sliding Banner -->
+        <div class="slider-container shadow-lg mb-8 bg-gray-200">
+            <!-- Slide 1 -->
+            <img src="https://picsum.photos/id/1/1200/400" alt="Banner 1" class="slide-image active">
+            <!-- Slide 2 -->
+            <img src="https://picsum.photos/id/20/1200/400" alt="Banner 2" class="slide-image">
+            <!-- Slide 3 -->
+            <img src="https://picsum.photos/id/48/1200/400" alt="Banner 3" class="slide-image">
+            
+            <!-- Banner Text Overlay -->
+            <div class="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white w-full p-4 text-center">
+                <p class="text-lg">Building the Future of Technology</p>
+            </div>
+        </div>
+        </section>
+
+        <hr class="border-t-2 border-gray-300 mx-4">
+
+        <!-- OUR PROFILE SECTION -->
+         <section id="profile" class="container mx-auto px-4 py-12">
+            <h2 class="text-2xl font-bold mb-8 text-center md:text-left">Our Profile</h2>
+        
+        <div class="flex flex-col lg:flex-row gap-8 items-start">
+            
+            <!-- Profile Image -->
+            <div class="w-full lg:w-1/3">
+                <div class="rounded-lg overflow-hidden shadow-lg border border-gray-200 h-64 lg:h-auto">
+                    <img src="https://picsum.photos/id/180/800/600" 
+                         alt="Our Team" 
+                         class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <!-- Text Content -->
+            <div class="w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- About Company -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-100">
+                    <h3 class="text-xl font-bold mb-4 text-blue-800">About Us</h3>
+                    <p class="text-gray-700 leading-relaxed text-justify">
+                        We are a leading innovative technology company dedicated to transforming businesses through digital solutions. Established in 2023 during the Coding Camp, we strive to learn, grow, and implement the best web practices. Our team consists of passionate learners ready to tackle global challenges.
+                    </p>
+                </div>
+
+                <!-- Vision & Mission -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-100">
+                    <h3 class="text-xl font-bold mb-4 text-blue-800">Vision & Mission</h3>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-900">Vision</h4>
+                        <p class="text-gray-700">To be the most learner-centric tech hub in Indonesia.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900">Mission</h4>
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li>Provide excellent coding practices.</li>
+                            <li>Innovate through continuous learning.</li>
+                            <li>Build sustainable digital products.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- HEADQUARTERS SECTION -->
+        <section id="headquarters" class="bg-gray-50 py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold mb-8 text-center md:text-left">Our Headquarter</h2>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-12">
+                <!-- Location 1 -->
+                <div class="flex flex-col items-center">
+                    <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-md mb-4 bg-gray-300">
+                        <img src="https://picsum.photos/id/1015/300/300" alt="Jakarta" class="w-full h-full object-cover">
+                    </div>
+                    <span class="font-bold text-lg">Jakarta</span>
+                    <p class="text-sm text-gray-500">Main Office</p>
+                </div>
+
+                <!-- Location 2 -->
+                <div class="flex flex-col items-center">
+                    <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-md mb-4 bg-gray-300">
+                        <img src="https://picsum.photos/id/1040/300/300" alt="Bandung" class="w-full h-full object-cover">
+                    </div>
+                    <span class="font-bold text-lg">Bandung</span>
+                    <p class="text-sm text-gray-500">Creative Hub</p>
+                </div>
+
+                <!-- Location 3 -->
+                <div class="flex flex-col items-center">
+                    <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-md mb-4 bg-gray-300">
+                        <img src="https://picsum.photos/id/1031/300/300" alt="Surabaya" class="w-full h-full object-cover">
+                    </div>
+                    <span class="font-bold text-lg">Surabaya</span>
+                    <p class="text-sm text-gray-500">Tech Center</p>
+                </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- PORTFOLIO SECTION -->
+        <section id="portfolio" class="container mx-auto px-4 py-12">
+        <h2 class="text-2xl font-bold mb-4">Portfolio</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-gray-200 h-48 rounded overflow-hidden shadow-sm hover:shadow-lg transition">
+                <img src="https://picsum.photos/id/119/400/300" alt="Project 1" class="w-full h-full object-cover">
+            </div>
+            <div class="bg-gray-200 h-48 rounded overflow-hidden shadow-sm hover:shadow-lg transition">
+                <img src="https://picsum.photos/id/160/400/300" alt="Project 2" class="w-full h-full object-cover">
+            </div>
+            <div class="bg-gray-200 h-48 rounded overflow-hidden shadow-sm hover:shadow-lg transition">
+                <img src="https://picsum.photos/id/201/400/300" alt="Project 3" class="w-full h-full object-cover">
+            </div>
+            <div class="bg-gray-200 h-48 rounded overflow-hidden shadow-sm hover:shadow-lg transition">
+                <img src="https://picsum.photos/id/250/400/300" alt="Project 4" class="w-full h-full object-cover">
+            </div>
+        </div>
+        </section>
+        <hr class="border-t-2 border-gray-300 mx-4">
+
+        <!-- MESSAGE US SECTION (UPDATED with Validation UI) -->
+        <section id="message-us" class="container mx-auto px-4 py-12 mb-8">
+        <div class="flex flex-col lg:flex-row gap-8">
+            
+            <!-- Left Side: Form -->
+            <div class="w-full lg:w-1/2">
+                <h2 class="text-2xl font-bold mb-6">Message Us</h2>
+                <form name="message-form" onsubmit="return validateForm()" class="space-y-4" novalidate>
+                    <!-- Name -->
+                    <div>
+                        <div class="flex flex-col md:flex-row md:items-center">
+                            <label class="w-32 font-medium mb-1 md:mb-0">Name <span class="text-red-500">*</span></label>
+                            <input type="text" id="name" name="name" placeholder="Enter your name" 
+                                class="flex-1 border border-gray-400 px-3 py-2 rounded focus:outline-none focus:border-blue-500">
+                        </div>
+                        <p id="error-name" class="text-red-500 text-sm mt-1 md:ml-32 hidden">Name is required.</p>
+                    </div>
+
+                    <!-- Email -->
+                    <div>
+                        <div class="flex flex-col md:flex-row md:items-center">
+                            <label class="w-32 font-medium mb-1 md:mb-0">Email <span class="text-red-500">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="example@email.com"
+                                class="flex-1 border border-gray-400 px-3 py-2 rounded focus:outline-none focus:border-blue-500">
+                        </div>
+                        <p id="error-email" class="text-red-500 text-sm mt-1 md:ml-32 hidden">Please enter a valid email.</p>
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div>
+                        <div class="flex flex-col md:flex-row md:items-center">
+                            <label class="w-32 font-medium mb-1 md:mb-0">Phone <span class="text-red-500">*</span></label>
+                            <input type="tel" id="phone" name="phone" placeholder="08123456789"
+                                class="flex-1 border border-gray-400 px-3 py-2 rounded focus:outline-none focus:border-blue-500">
+                        </div>
+                        <p id="error-phone" class="text-red-500 text-sm mt-1 md:ml-32 hidden">Please enter a valid phone number.</p>
+                    </div>
+
+                    <!-- Message -->
+                    <div>
+                        <div class="flex flex-col md:flex-row md:items-start">
+                            <label class="w-32 font-medium mb-1 md:mb-0 pt-2">Message <span class="text-red-500">*</span></label>
+                            <textarea id="message" name="message" rows="4" placeholder="Type your message..." 
+                                class="flex-1 border border-gray-400 px-3 py-2 rounded focus:outline-none focus:border-blue-500"></textarea>
+                        </div>
+                        <p id="error-message" class="text-red-500 text-sm mt-1 md:ml-32 hidden">Message should be at least 5 characters.</p>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="md:pl-32">
+                        <button type="submit" class="w-full md:w-auto px-8 py-2 bg-gray-800 hover:bg-gray-900 text-white font-bold border border-transparent rounded transition duration-200">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Right Side: Display Box -->
+            <div class="w-full lg:w-1/2">
+                <div class="result-box p-6 relative">
+                    <p class="font-bold text-sm mb-4">Current time : <span id="current-time">--</span></p>
+                    
+                    <div id="result-container" class="space-y-2 hidden">
+                        <p><span class="font-bold">Name :</span> <span id="res-name"></span></p>
+                        <p><span class="font-bold">Email :</span> <span id="res-email"></span></p>
+                        <p><span class="font-bold">Phone :</span> <span id="res-phone"></span></p>
+                        <p><span class="font-bold">Message :</span> <span id="res-message"></span></p>
+                    </div>
+                    
+                    <div id="empty-state" class="text-gray-400 text-center mt-10">
+                        Form data will appear here...
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+
+     </main>
 
     <!-- Footer -->
-     <footer></footer>
+     <footer class="mt-auto py-6 border-t border-gray-300">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm">© 2025 Yanuar Nuralamsyah. All rights reserved.</p>
+        </div>
+     </footer>
 
-     
+
     <!-- JS External -->
     <script src="js/script.js"></script>
 </body>
