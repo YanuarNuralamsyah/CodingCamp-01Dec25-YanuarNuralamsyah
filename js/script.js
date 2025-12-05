@@ -1,3 +1,11 @@
+// INITIALIZE ALL FUNCTIONS ON DOM CONTENT LOADED
+document.addEventListener('DOMContentLoaded', () => {
+    replaceName();
+    startClock();
+    startBannerSlider();
+    initMobileMenu();
+});
+
 //  WELCOME NAME FUNCTIONALITY
         window.onload = function() {
             replaceName();
