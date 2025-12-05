@@ -7,11 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 //  WELCOME NAME FUNCTIONALITY
-        window.onload = function() {
-            replaceName();
-            startClock();
-            startBannerSlider();
-        };
 
         function replaceName() {
             let user = prompt("Please enter your name:", "");
